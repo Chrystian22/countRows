@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'us-east-2' // Cambia según tu región
-        S3_BUCKET = 'sitio-estatico-devops' // Cambia por tu bucket S3
+        AWS_REGION = 'us-east-1' // Cambia según tu región
+        S3_BUCKET = 'jenkins-pipeline-01' // Cambia por tu bucket S3
     }
 
     stages {
         stage('Clone Repository') {
             steps {
                 // Clona el repositorio
-                git branch: 'main', url: 'https://github.com/Chrystian22/Formulario.git'
+                git branch: 'main', url: 'https://github.com/Chrystian22/countRows.git'
             }
         }
 
