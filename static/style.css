@@ -1,550 +1,155 @@
-/* Importación de fuentes mediante GoogleFonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&family=Roboto:wght@700&display=swap');
-
-/* Estilo del documento */
-*{
-    margin:0;
+/* Reseteo de márgenes y bordes de todos los elementos */
+* {
+    margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Asegura que los márgenes y bordes no afecten al tamaño total */
 }
 
-/* Contenedor del documento */
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: darkblue;
-}
-
-/* Main */
-.form{
-    display: flex;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
-    height: 550px;
-    width: 970px;
-    box-shadow: 0 0 10px 0 rgb(21, 21, 172);
-    /* margin-left: 45px; */
-    /* transition: all 1s ease; */
-}
-
-/* Contenedor primera sección */
-.container{
-    width: 34%;
+body {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh; /* Usar el 100% de la altura de la ventana */
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    background-color: rgb(183, 219, 219); /* Fondo suave */
+    color: rgb(0, 0, 0); /* Texto en color negro para contraste */
+    padding: 1rem;
+    overflow: hidden;
+}
+
+h1, h3 {
+    margin-block: 1rem;
     text-align: center;
-    background-image: url(img/texture.png);
-    background-size: cover;
+    color: rgb(0, 0, 0); /* Color de texto negro */
 }
 
-/* Textos */
-.textos{
-    width: 100%;
-    padding: 0 30px;
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-.textos h2{
-    color: #fff;
-    margin: 180px 0 30px 0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+h3 {
+    font-size: 1.2rem;
+    color: rgb(50, 50, 50); /* Color un poco más suave para el subtítulo */
 }
 
-.textos span{
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    color: #E4E4E4;
-}
-
-.textos h5{
-    color: #fff;
-    margin-top: 150px;
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-}
-
-/* Iconos */
-.icons{
-    margin: 20px 0 60px 0;
+/* Caja principal */
+.main-box {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    justify-content: center; /* Para que las cajas se alineen en línea horizontal */
+    align-items: center; /* Alinea al principio */
+    width: 80%; /* Reducido para que no ocupe todo el ancho */
+    max-width: 1200px; /* Máximo de 1000px de ancho para evitar que se estire demasiado */
+    height: 80%; /* Aumenté un poco el alto */
+    gap: 2rem;
+    background-color: rgb(255, 255, 255); /* Fondo blanco para la caja */
+    padding: 2rem;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.icons img{
-    max-width: 70px;
-    height: auto;
-    padding: 10px;
-}
-
-
-/*Segundo contenedor*/
-
-.section{
-    /* border: 3px solid red; */
-    background-color: #fff;
-    width: 66%;
+.textscript-box, .response-box {
     display: flex;
     flex-direction: column;
-}
-
-/* Titulo Register */
-.register{
-    /* border: 4px solid rgb(0, 221, 255); */
-    height: 15%;
-}
-
-
-.register h2{
-    color: 222222;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 30px;
-    margin: 35px 35px;
-}
-
-/* Cuerpo del formulario */
-
-#formulario{
-    /* border: 5px solid rgb(245, 0, 233); */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-}
-
-.caja1,
-.caja2{
-    /* border: 5px solid rgb(95, 230, 95); */
-    width: 50%;
-    height: 75%;
-    display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    border-radius: 10px;
+    padding: 1rem;
 }
 
-/* Campos del formulario */
-.input-tools{
-    position: relative;
-    /* border: solid #0B2349; */
-    margin-top: 20px;
-    margin-bottom: 15px;
-}  
-
-#tools1{
-    margin-left: 20px;
-    width: 85%;
+/* Aumentamos el tamaño de textscript-box y reducimos el de response-box */
+.textscript-box {
+    width: 70%; /* Aumentamos el ancho */
+    height: 100%;
+    gap: 1rem;
 }
 
-#tools2{
-    margin-right: 20px;
-    width: 85%;
-}
-
-/* Nombre de los campos del formulario*/
-.details{
-    display: block;
-    font-size: 12px;
-    color: #757575;
-    margin-bottom: 10px;
-}
-
-/* Inputs */
-.input-tools input{
-    position: relative;
-    background-color: #FAFAFA;
-    border: solid #EAEDF1;
-    border-radius: 3px;
-    padding-left: 15px;
-    height: 45px;
-    width: 100%;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-/* Campos al validar */
-.input-tools input:valid,
-.input-tools input:focus{
-    border: solid darkgrey;
-    color: black;
-}
-
-/* Campos falla del validado */
-
-.input-falla, .campo1 , .campo2{
-    position: relative;
-    margin-top: 20px;
-}
-
-.input-falla input{
-    /* margin-top: 20px; */
-    margin-bottom: 20px;
-    border-radius: 3px;
-    padding-left: 15px;
-    width: 100%;
-    height: 45px;
-    outline: none;
-    border: solid red;
-}
-
-/* Campos Ok del validado */
-.input-ok input{
-    margin-bottom: 20px;
-    border-radius: 3px;
-    padding-left: 15px;
-    width: 100%;
-    height: 45px;
-    outline: none;
-    border: solid green;
-    background-color: rgb(231, 255, 207);
-    transition: all 0.3s ease;
-}
-
-.input-ok, .campo1 , .campo2{
-    position: relative;
-    margin-top: 20px;
-}
-
-/* Ojo contraseña */
-.ojo{
-    position: absolute;
-    height: 25%;
-    right: 10px;
-    top: 57%;
-    opacity: 0.3;
-    cursor: pointer;
-}
-
-.ojo:hover{
-    opacity: 0.8;
-}
-
-/* Ojo al fallo */
-.input-falla .ojo{
-    position: absolute;
-    height: 25%;
-    right: 10px;
-    top: 40%;
-    opacity: 0.3;
-    cursor: pointer;
-}
-
-.input-falla .ojo:hover{
-    opacity: 0.8;
-}
-
-/* Ojo al Ok */
-.input-ok .ojo{
-    position: absolute;
-    height: 25%;
-    right: 10px;
-    top: 40%;
-    opacity: 0.3;
-    cursor: pointer;
-}
-
-.input-ok .ojo:hover{
-    opacity: 0.8;
-}
-
-/* Texto al fallo del validado */
-p{
-    width: 250px;
-    visibility: hidden;
-    position: absolute;
-    font-size: small;
-    font-weight: 500;
-    text-align: left;
-    margin-top: -20px;
-    text-wrap: wrap;
-}
-
-.input-falla p{
-    visibility: visible;
-    color: red;
-} 
-
-/* Botones Cancel y Register */
-.buttons{
-    /* border: 5px solid rgb(68, 170, 68); */
+.response-box {
+    width: 30%; /* Reducimos el ancho */
+    height: 60%;
+    border: 2px solid rgb(100, 100, 100); /* Bordes suaves */
+    background-color: rgb(240, 240, 240); /* Fondo gris claro */
     display: flex;
-    width: 100%;
-    height: 25%;
-    align-items: start;
     justify-content: center;
 }
 
-.button1, .button2{
-    margin-top: 10px;
-    /* border: solid yellow;; */
+/* Estilizando el textarea */
+.textscript-box textarea {
+    background-color: aliceblue;
+    width: 100%; /* Esto hace que el textarea ocupe todo el ancho disponible */
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid rgb(200, 200, 200);
+    margin-bottom: 1rem; /* Separación entre el campo y el botón */
+    height: 550px; /* Aumentamos la altura para mejor visualización */
+    resize: vertical; /* Permite que el usuario ajuste el tamaño vertical del textarea */
+    box-sizing: border-box; /* Asegura que el padding y el borde no afecten al tamaño total */
 }
 
-/* Button Cancel para separar*/
-.button1{
-    margin-right: 5px;
-    width: 44%;
+/* Estilo para los botones organizados en dos filas */
+.textscript-box .button-row {
+    display: flex;
+    gap: 1rem;  /* Espacio entre los botones */
+    justify-content: center;  /* Alinea los botones a la izquierda */
+    width: 100%; /* Asegura que los botones ocupen el ancho completo */
 }
 
-/* Button Register para separar*/
-.button2{
-    margin-left: 5px;
-    width: 44%;
-}
-
-/* Inputs buttons */
-.buttons input{
-    width: 100%;
-    height: 50px;
-    padding: 0 85px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-/* Boton Cancel */
-.button-cancel input{
-    border: solid #0B2349;
-    color: #0B2349;
-    background: #fff;
-    transition: all 0.3s ease;
-}
-
-.button-cancel input:hover{
-    border: solid #90a3c1de;
-    background: #90a3c1de;
-    transition: all 0.5s ease;
-}
-
-/* Boton Register */
-.button-register input{
-    border: solid #0B2349;
-    color: #fff;
-    background: #0B2349;
-    transition: all 0.3s ease;
-}
-
-.button-register input:hover{
-    background: #1b3b6ede;
+.textscript-box button#selectAllButton {
+    background-color: rgb(0, 122, 255);
+    color: white;
+    padding: 0.8rem 1.5rem;
     border: none;
-    box-shadow: 0px 0px 10px 0px #0B2349;
-    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: auto; /* No hacer los botones demasiado anchos */
 }
 
-/* Responsives solo de prueba*/
-@media (max-width: 770px){
-    
-    .form{
-        display: flex;
-        flex-direction: column;
-        margin-top: -200px;
-    }
-
-    #formulario{
-        margin-bottom: 15px;
-    }
-
-    .container{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .textos h2{
-        font-size: 50px;
-    }
-    
-    .textos span{
-        margin: 50px !important;
-        font-size: 22px;
-    }
-    
-    .textos h5{
-        font-size: 22px;
-    }
-
-    .icons{
-        margin: 30px 0 60px 0;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .icons img{
-        max-width: 70px;
-        padding: 10px;
-    }
-
-    .section{
-        background-color: #fff;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .formulario{
-        width: 100%;
-        height: 80%;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 30px;
-    }
-
-    .input-tools{
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    
-    .input-tools input{
-        display: block;
-        width: 100%;
-    }
-
-    .input-falla input{
-        margin-bottom: 30px;
-        border-radius: 3px;
-        width: 100%;
-        height: 50px;
-        outline: none;
-    }  
-
-    .buttons{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .buttons input{
-        width: 100%;
-    }
+.textscript-box button#selectAllButton:hover {
+    background-color: rgb(0, 102, 204);
+}
+.textscript-box button#pasteButton {
+    background-color: rgb(126, 196, 13);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: auto; /* No hacer los botones demasiado anchos */
 }
 
-@media (max-width: 450px){
-
-    .form{
-        display: flex;
-        flex-direction: column;
-        margin-top: -380px;
-    }
-
-    
-    .container{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .textos h2{
-        margin: 10px;
-        font-size: 35px;
-        margin-top: 80px;
-        margin-bottom: 50px;
-    }
-    
-    .textos span{
-        margin: 10px;
-        font-size: 15px;
-    }
-    
-    .textos h5{
-        margin-top: 50px !important;
-        margin: 10px;
-        font-size: 15px;
-    }
-    
-    .icons{
-        margin: 30px 0 60px 0;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .icons img{
-        max-width: 70px;
-        height: auto;
-        padding: 10px;
-    }
-    
-    .section{
-        background-color: #fff;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #formulario{
-        margin-bottom: 15px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .formulario{
-        width: 100%;
-        height: 80%;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 30px;
-    }
-
-    .input-tools{
-        width: 100%;
-        margin-bottom: 30px;
-    } 
-    
-    .input-falla input{
-        margin-bottom: 30px;
-        border-radius: 3px;
-        padding-left: 15px;
-        width: 100%;
-        height: 50px;
-        outline: none;
-    }
-
-    .buttons{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .buttons input{
-        width: 100%;
-    }
+.textscript-box button#pasteButton:hover {
+    background-color: rgb(97, 151, 10);
 }
 
-@media (max-width: 380px){
-
-    .form{
-        display: flex;
-        flex-direction: column;
-        margin-top: -400px;
-    }
-
-    .input-falla input{
-        margin-bottom: 30px;
-        border-radius: 3px;
-        padding-left: 15px;
-        max-width: 100%;
-        height: 50px;
-        outline: none;
-    }
+.textscript-box button#sendButton {
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 300px;
+    background-color: blueviolet;
 }
 
-@media (max-width: 285px){
+.textscript-box button#sendButton:hover {
+    background-color: rgb(74, 0, 143);
+}
 
-    .form{
-        display: flex;
-        flex-direction: column;
-        margin-top: -400px;
-    }
-
-    
+/* Caja de respuesta */
+.response-box h2 {
+    font-size: 1.2rem;
+    color: rgb(50, 50, 50); /* Color más suave */
+    text-align: center;
+    line-height: 1.5;
+    word-wrap: break-word; /* Permite que el texto largo se ajuste a la línea */
+    margin: 1rem;
 }
