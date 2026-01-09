@@ -3,19 +3,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para contar las ocurrencias de "row" y sumar los valores numéricos
     function countRows(text) {
-        // Expresión regular para encontrar patrones como "(n row affected)"
-        const regex = /\((\d+)\s*row\s*affected\)/gi;
+        const regex = /\((\d+)\s*row(?:s|\(s\))?\s*affected\)/gi;
         let match;
         let totalRows = 0;
-
-        // Buscamos todas las coincidencias en el texto
+    
         while ((match = regex.exec(text)) !== null) {
-            const numRows = parseInt(match[1], 10);  // Extraemos el número de filas
-            totalRows += numRows;  // Suma el número de filas afectadas
+            totalRows += parseInt(match[1], 10);
         }
-
+    
         return totalRows;
     }
+
 
     // Evento para el botón "Enviar"
     const sendButton = document.getElementById("sendButton");
